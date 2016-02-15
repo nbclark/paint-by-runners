@@ -1,0 +1,287 @@
+CIwUIElement 
+{
+	name "pause\Panel"
+	updatable true
+	CIwUIElement 
+	{
+		name "Base"
+		updatable true
+		CIwUILayoutVertical 
+		{
+			name ""
+			sizeToSpace true
+			
+			element 
+			{
+				name "Resume_Button"
+			}
+			CIwUILayoutSpacer 
+			{
+				sizeMin  { -1 10 }
+				sizeMax  { -1 10 }
+				sizeHint  { -1 10 }
+			}
+			element 
+			{
+				name "Middle"
+			}
+		}
+		CIwUIButton
+		{
+			name "Resume_Button"
+			sizeMax { -1 -1 }
+			sizeHint { 300 40 }
+			sizeMin { 120 40 }
+			sizeToSpace true
+			sizeTocontent false
+			style <scorebutton>
+			font "font_medium"
+			
+			caption "Tap the Screen to Continue..."
+			OnButtonClick  { "ActiveGameState::OnClickResume" }
+		}
+		CIwUIElement 
+		{
+			name "Middle"
+			updatable true
+			CIwUIElement 
+			{
+				name "MiddleLayer"
+				updatable true
+				CIwUIScrollableView 
+				{
+					name "Scores"
+					wrapLeft "none"
+					wrapRight "none"
+					wrapUp "none"
+					wrapDown "none"
+					updatable true
+					clipped true
+					CIwUIFocusHandlerTab 
+					{
+						name ""
+					}
+					CIwUILabel
+					{
+						name "Users"
+						sizeMax { -1 -1 }
+						sizeHint { 300 45 }
+						sizeMin { 120 45 }
+						sizeToSpace true
+						sizeTocontent false
+						background <helpbutton_up>
+						colour { 255 255 255 190 }
+						textColour { 255 255 255 255 }
+						font "font_large"
+						alignH "left"
+						alignV "middle"
+						margin { 10 0 }
+						
+						caption "Users"
+					}
+					CIwUIElement
+					{
+						name "HelpUsers"
+						sizeMax { -1 -1 }
+						
+						CIwUILayoutVertical 
+						{
+							sizeToSpace true
+							name ""
+						}
+					}
+					CIwUILabel
+					{
+						name "Help"
+						sizeMax { -1 -1 }
+						sizeHint { 300 45 }
+						sizeMin { 120 45 }
+						sizeToSpace true
+						sizeTocontent false
+						background <helpbutton_up>
+						colour { 255 255 255 150 }
+						textColour { 255 255 255 255 }
+						font "font_large"
+						alignH "left"
+						alignV "middle"
+						margin { 10 0 }
+						
+						caption "Help"
+					}
+					CIwUILayoutVertical 
+					{
+						sizeToSpace true
+						CIwUILayoutSpacer 
+						{
+							sizeMin  { -1 5 }
+							sizeMax  { -1 5 }
+							sizeHint  { -1 5 }
+						}
+						element 
+						{
+							name "Users"
+							alignH "left"
+							alignV "top"
+						}
+						CIwUILayoutSpacer 
+						{
+							sizeMin  { -1 5 }
+							sizeMax  { -1 5 }
+							sizeHint  { -1 5 }
+						}
+						element 
+						{
+							name "HelpUsers"
+							alignH "left"
+							alignV "top"
+						}
+						CIwUILayoutSpacer 
+						{
+							sizeMin  { -1 5 }
+							sizeMax  { -1 5 }
+							sizeHint  { -1 5 }
+						}
+						element 
+						{
+							name "Help"
+							alignH "left"
+							alignV "top"
+						}
+					}
+				}
+				CIwUILayout 
+				{
+					name ""
+					sizeToSpace true
+					element 
+					{
+						name "Scores"
+					}
+				}
+			}
+			CIwUILayout 
+			{
+				name ""
+				sizeToSpace true
+				element 
+				{
+					name "TopLayer"
+					alignV "top"
+				}
+				element 
+				{
+					name "MiddleLayer"
+					alignV "top"
+					alignH "left"
+				}
+			}
+		}
+	}
+	CIwUILayout 
+	{
+		name ""
+		sizeToSpace true
+		element 
+		{
+			name "Base"
+		}
+	}
+}
+
+
+CIwUIElement 
+{
+	name "UserScoreTemplate"
+	CIwUIButton 
+	{
+		sizeToSpace true
+		name "ButtonBase"
+		style <scorebutton>
+		sizeMin  { 0 20 }
+		sizeMax  { -1 55 }
+		sizeHint  { -1 80 }
+		caption ""
+		textColour { 0 0 0 255 }
+		
+		CIwUILabel
+		{
+			name "ButtonTemplate_Text"
+			style <label_medium>
+			sizeHint  { 300 40 }
+			clipped true
+			sizeToContent false
+			caption "User Name"
+			oneLine true
+		}
+		
+		CIwUILabel
+		{
+			name "ButtonTemplate_Status"
+			style <label_huge>
+			sizeHint  { 300 40 }
+			clipped true
+			sizeToContent false
+			caption "1.5 miles away"
+			oneLine true
+		}
+		
+		CIwUIImage
+		{
+			name "ButtonTemplate_Image"
+			sizeMin  { 16 16 }
+			sizeMax  { 32 32 }
+			sizeHint  { 32 32 }
+			aspectRatio { 1 1 }
+			texture "userB"
+		}
+		
+		CIwUILayoutGrid 
+		{
+			name ""
+			sizeToSpace true
+			
+			column { }
+			column { }
+			column { }
+			
+			row { }
+
+			element 
+			{
+				name "ButtonTemplate_Image"
+				alignH left
+				alignV middle
+				border { 5 5 }
+				row 0
+				column 0
+			}
+			element 
+			{
+				name "ButtonTemplate_Text"
+				alignH left
+				alignV middle
+				row 0
+				column 1
+				border { 0 0 }
+			}
+			element 
+			{
+				name "ButtonTemplate_Status"
+				alignH right
+				alignV middle
+				row 0
+				column 2
+				border { 0 0 }
+			}
+		}
+	}
+	CIwUILayoutVertical 
+	{
+		name ""
+		sizeToSpace true
+		element 
+		{
+			name "ButtonBase"
+		}
+	}
+}

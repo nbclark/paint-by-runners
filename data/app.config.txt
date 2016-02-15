@@ -1,0 +1,111 @@
+# This .config.txt file documents configuration settings for your
+# application
+# The syntax is similar to that in .icf files:
+#
+# [GroupName]
+# Setting     Documentation for setting
+#
+# e.g.
+# [MyApplicationGroup]
+# MySetting   Description of what MySetting is for, its default values, etc
+
+
+#include "Utils.h"
+
+void Utils::AlphaRenderImage(CIwTexture* pTexture, CIwSVec2& location, double alpha, double rotationAngle)
+{
+	int xOffset = IwGxGetScreenWidth() / 2;
+	int yOffset = IwGxGetScreenHeight() / 2;
+
+	int width = pTexture->GetWidth();
+	int height = pTexture->GetHeight();
+	
+	CIwMaterial* pMat = IW_GX_ALLOC_MATERIAL();
+	pMat->SetAlphaMode(CIwMaterial::ALPHA_BLEND);
+	pMat->SetModulateMode(CIwMaterial::MODULATE_RGB);
+
+	// Use Texture on Material
+	pMat->SetTexture(pTexture);
+	IwGxSetMaterial(pMat);
+
+	int wo2 = width / 2;
+	int ho2 = height / 2;
+
+	CIwSVec3* pWSCoords= IW_GX_ALLOC(CIwSVec3, 4);
+	pWSCoords[0].x = location.x; pWSCoords[0].y = location.y;
+	pWSCoords[1].x = location.x; pWSCoords[1].y = location.y + height;
+	pWSCoords[2].x = location.x + width; pWSCoords[2].y = location.y + height;
+	pWSCoords[3].x = location.x + width; pWSCoords[3].y = location.y;
+	pWSCoords[0].z = pWSCoords[1].z = pWSCoords[2].z = pWSCoords[3].z = 0;
+
+	CIwMat viewMat = IwGxGetViewMatrix();
+rotationAngle = 0;
+	if (rotationAngle != 0)
+	{
+		CIwMat rotMat = viewMat;
+		iwangle degAng = (iwangle)(IW_GEOM_ONE * rotationAngle);
+
+		CIwMat rotZ;
+		rotZ.SetRotZ(degAng);
+		//rotMat.CopyRot(rotZ);
+
+		// Center the image exactly on the origin, then translate to location
+		int newxOffset = (location.x + width / 2);
+		int newyOffset = (location.y + height / 2);
+
+		rotMat.SetTrans(CIwVec3((xOffset-newxOffset), (yOffset-newyOffset), -512));
+		//rotMat.SetTrans(CIwVec3(PostMult , -512));
+		rotMat.PostMult(rotZ);
+		IwGxSetViewMatrix(&rotMat);
+
+		xOffset = newxOffset;
+		yOffset = newyOffset;
+	}
+
+	for (int i = 0; i < 4; ++i)
+	{
+		pWSCoords[i].x -= xOffset;
+		pWSCoords[i].y -= yOffset;
+	}
+
+	//// Scale the coordinates by offsetting, scaling and rendering
+	//for (int i = 0; i < 4; ++i)
+	//{
+	//	pWSCoords[i].x -= xOffset;
+	//	pWSCoords[i].y -= yOffset;
+	//}
+
+	CIwMat modelMat;
+	modelMat.SetIdentity();
+	modelMat.t.x = 0;//location.x;
+	modelMat.t.y = 0;//location.y;
+
+	IwGxSetModelMatrix(&modelMat);
+
+	IwGxSetVertStreamModelSpace(pWSCoords, 4);
+
+	static CIwSVec2 uvs[4] =
+	{
+		CIwSVec2(0 << 12, 0 << 12),
+		CIwSVec2(0 << 12, 1 << 12),
+		CIwSVec2(1 << 12, 1 << 12),
+		CIwSVec2(1 << 12, 0 << 12),
+	};
+
+	//CIwColour cols[4];
+	CIwColour* cols = IW_GX_ALLOC(CIwColour, 4);
+	for (int i = 0; i < 4; ++i)
+	{
+		cols[i].r = cols[i].g = cols[i].b = 0xff;
+		cols[i].a = alpha;
+	}
+
+	IwGxSetUVStream(uvs);
+	IwGxSetColStream(cols);
+	IwGxDrawPrims(IW_GX_QUAD_LIST, NULL, 4);
+
+	if (rotationAngle != 0)
+	{
+		IwGxSetViewMatrix(&viewMat);
+	}
+}

@@ -1,0 +1,158 @@
+CIwUIPropertySet
+{
+	name		<popupdialog>
+	sizeMax		{ -1 225 }
+}
+CIwUIPropertySet
+{
+	name		<textentrybox>
+	sizeMax		{ -1 300 }
+}
+	
+CIwUIStylesheet
+{
+	name "small"
+	parent "iwui"
+
+	CIwUIPropertySet
+	{
+		name		<button>
+		parent		<button>
+		font		font_small
+	}
+	CIwUIPropertySet
+	{
+		name <titlebutton>
+		parent <titlebutton>
+		sizeMin  { 0 40 }
+		sizeMax  { -1 40 }
+	}
+	CIwUIPropertySet
+	{
+		name <gamebutton>
+		parent <gamebutton>
+		sizeMax  { 280 40 }
+	}
+	CIwUIPropertySet
+	{
+		name <mapbutton>
+		parent <mapbutton>
+		sizeMax  { -1 60 }
+	}
+	CIwUIPropertySet
+	{
+		name <label_medium>
+		parent <label_medium>
+		sizeMax  { -1 20 }
+		sizeMin	 {0 20}
+	}
+	CIwUIPropertySet
+	{
+		name <label_small>
+		parent <label_small>
+		sizeMax  { -1 20 }
+		sizeMin	 {0 20}
+	}
+	CIwUIPropertySet
+	{
+		name <edit-textField>
+		parent <textField>
+		font font_small
+	}
+	CIwUIPropertySet
+	{
+		name <popupdialog>
+		parent <popupdialog>
+		sizeMax	{ -1 120 }
+	}
+	CIwUIPropertySet
+	{
+		name <textentrybox>
+		parent <textentrybox>
+		sizeMax	{ -1 160 }
+	}
+}
+CIwUIStylesheet
+{
+	name "medium"
+	parent "small"
+
+	CIwUIPropertySet
+	{
+		name		<button>
+		parent		<button>
+		font		font_medium
+	}
+	CIwUIPropertySet
+	{
+		name   <label_large>
+		parent <label_large>
+		font	font_large
+	}
+	
+	CIwUIPropertySet
+	{
+		name   <label_medium>
+		parent <label_medium>
+		font	font_medium
+	}
+	
+	CIwUIPropertySet
+	{
+		name   <label_small>
+		parent <label_small>
+		font	font_medium
+	}
+	CIwUIPropertySet
+	{
+		name <titlebutton>
+		parent <titlebutton>
+		sizeMin  { 0 64 }
+		sizeMax  { -1 64 }
+		sizeHint  { -1 64 }
+	}
+	CIwUIPropertySet
+	{
+		name <edit-textField>
+		parent <edit-textField>
+		font font_medium
+	}
+}
+CIwUIStylesheet
+{
+	name "large"
+	parent "medium"
+
+	CIwUIPropertySet
+	{
+		name		<button>
+		parent		<button>
+		font		font_large
+	}
+	CIwUIPropertySet
+	{
+		name   <label_large>
+		parent <label_large>
+		font	font_large
+	}
+	
+	CIwUIPropertySet
+	{
+		name   <label_medium>
+		parent <label_medium>
+		font	font_large
+	}
+	
+	CIwUIPropertySet
+	{
+		name   <label_small>
+		parent <label_small>
+		font	font_medium
+	}
+	CIwUIPropertySet
+	{
+		name <edit-textField>
+		parent <edit-textField>
+		font font_large
+	}
+}

@@ -1,0 +1,108 @@
+CIwUIElement 
+{
+	name "active\\panel"
+	sizetoSpace true
+	
+		CIwUIButton
+		{
+			name "top"
+			style	<titlebutton>
+			colour { 0 0 0 40 }
+			textColour { 255 255 255 255 }
+					
+			CIwUIElement 
+			{
+				name "Base_1"
+				CIwUILabel
+				{
+					name "ButtonQuit"
+					style	<mapbutton>
+					colour { 0 0 0 105 }
+					textColour { 255 255 255 255 }
+					caption ""
+					//font	font_large
+					sizeMin  { 0 16 }
+					sizeMax  { -1 -1 }
+					sizeHint  { 64 64 }
+					aspectRatio { 1 1 }
+					visible false
+
+					CIwUIImage
+					{
+						name "img"
+						sizeToContent false
+						texture "back"
+						sizeMin  { 0 0 }
+						sizeMax	{ 0 0 }
+						sizeHint  { 64 64 }
+						aspectRatio { 1 1 }
+					}
+					CIwUILayout 
+					{
+						name ""
+						element 
+						{
+							name "img"
+							alignH "centre"
+							alignV "middle"
+						}
+					}
+				}
+				CIwUILabel
+				{
+					name "TitleLabel"
+					style <label_medium>
+					colour { 0 0 0 105 }
+					textColour { 255 255 255 255 }
+					sizeMin  { 0 16 }
+					sizeMax  { -1 -1 }
+					sizeHint  { 600 64 }
+					clipped true
+					sizeToContent false
+					caption ""
+					oneLine true
+					margin  { 8 0 }
+					//font	font_large
+				}
+				CIwUILayoutGrid 
+				{
+					name ""
+					column { }
+					row { }
+					sizeToSpace true
+					element 
+					{
+						name "TitleLabel"
+						alignH "left"
+						alignV "middle"
+						row 0
+						column 0
+					}
+				}
+			}
+			CIwUILayout 
+			{
+				name ""
+				sizeToSpace true
+				element 
+				{
+					name "TopPanel"
+				}
+				element 
+				{
+					name "Base_1"
+					border  { 0 0 }
+					alignV "middle"
+				}
+			}
+		}
+	CIwUILayout
+	{
+		name ""
+		element 
+		{
+			name "top"
+			alignV "top"
+		}
+	}
+}

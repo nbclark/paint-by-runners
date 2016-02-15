@@ -1,0 +1,310 @@
+CIwUIElement 
+{
+	name "highscore\\panel"
+	updatable true
+	CIwUIElement 
+	{
+		name "Base"
+		updatable true
+		CIwUILayoutVertical 
+		{
+			name ""
+			sizeToSpace true
+			element 
+			{
+				name "Top"
+			}
+			element 
+			{
+				name "Shadow"
+			}
+			element 
+			{
+				name "Middle"
+			}
+		}
+		CIwUIImage 
+		{
+			name "Shadow"
+			texture "titleBarBot"
+			border  { 6 0 }
+			sizeMin  { 0 5 }
+		}
+		CIwUIButton
+		{
+			name "Top"
+			OnButtonClick  { "HighScoreGameState::OnClickBack" }
+			style	<titlebutton>
+			
+			CIwUIElement 
+			{
+				name "Base_1"
+				CIwUILabel 
+				{
+					name "ButtonQuit"
+					style	<mapbutton>
+					colour { 0 0 0 105 }
+					textColour { 255 255 255 255 }
+					caption ""
+					//font	font_large
+					sizeMin  { 32 32 }
+					sizeMax  { -1 -1 }
+					sizeHint  { 64 64 }
+
+					CIwUIImage
+					{
+						name "img"
+						sizeToContent false
+						texture "back"
+						sizeMin  { 32 32 }
+						sizeMax	{ 64 64 }
+						sizeHint  { 64 64 }
+						aspectRatio { 1 1 }
+					}
+					CIwUILayout 
+					{
+						name ""
+						element 
+						{
+							name "img"
+							alignH "centre"
+							alignV "middle"
+						}
+					}
+				}
+				CIwUILabel
+				{
+					name "TitleLabel"
+					style <label_medium>
+					colour { 0 0 0 105 }
+					textColour { 255 255 255 255 }
+					sizeMin  { 0 35 }
+					sizeMax  { -1 -1 }
+					sizeHint  { 600 64 }
+					clipped true
+					sizeToContent false
+					caption "High Scores"
+					oneLine true
+					margin  { 8 0 }
+					//font	font_large
+					OnButtonClick  { "HighScoreGameState::OnClickBack" }
+				}
+				CIwUILayoutGrid 
+				{
+					name ""
+					column { }
+					column { }
+					row { }
+					sizeToSpace true
+					element 
+					{
+						name "TitleLabel"
+						alignH "left"
+						alignV "middle"
+						row 0
+						column 0
+					}
+					element 
+					{
+						name "ButtonQuit"
+						alignH "right"
+						alignV "middle"
+						row 0
+						column 1
+					}
+				}
+			}
+			CIwUILayout 
+			{
+				name ""
+				sizeToSpace true
+				element 
+				{
+					name "Base_1"
+					border  { 0 0 }
+					alignV "middle"
+				}
+			}
+		}
+		CIwUIElement 
+		{
+			name "Middle"
+			updatable true
+			CIwUIElement 
+			{
+				name "MiddleLayer"
+				updatable true
+				CIwUIScrollableView 
+				{
+					name "Scores"
+					wrapLeft "none"
+					wrapRight "none"
+					wrapUp "none"
+					wrapDown "none"
+					updatable true
+					clipped true
+					CIwUIFocusHandlerTab 
+					{
+						name ""
+					}
+					CIwUILayoutVertical 
+					{
+						name ""
+					}
+				}
+				CIwUILayout 
+				{
+					name ""
+					sizeToSpace true
+					element 
+					{
+						name "Scores"
+					}
+				}
+			}
+			CIwUILayout 
+			{
+				name ""
+				sizeToSpace true
+				element 
+				{
+					name "TopLayer"
+					alignV "top"
+				}
+				element 
+				{
+					name "MiddleLayer"
+					alignV "top"
+				}
+			}
+		}
+	}
+	CIwUILayout 
+	{
+		name ""
+		sizeToSpace true
+		element 
+		{
+			name "Base"
+		}
+	}
+}
+
+CIwUIElement 
+{
+	name "ScoreTemplate"
+	CIwUIButton 
+	{
+		name "ButtonBase"
+		style <scorebutton>
+		sizeMin  { 0 20 }
+		sizeHint  { -1 50 }
+		caption ""
+		textColour { 0 0 0 255 }
+		
+		CIwUILabel
+		{
+			name "ButtonTemplate_Index"
+			style <label_large>
+			sizeHint  { 25 50 }
+			clipped true
+			sizeToContent true
+			caption ""
+			oneLine true
+		}
+		
+		CIwUILabel
+		{
+			name "ButtonTemplate_Text"
+			style <label_huge>
+			sizeHint  { 200 50 }
+			clipped true
+			sizeToContent true
+			caption ""
+			oneLine true
+		}
+		
+		CIwUILabel
+		{
+			name "ButtonTemplate_Time"
+			style <label_medium>
+			sizeHint  { 200  50 }
+			clipped true
+			sizeToContent true
+			caption "1.5 miles away"
+			oneLine true
+		}
+		
+		CIwUILabel
+		{
+			name "ButtonTemplate_Distance"
+			style <label_medium>
+			sizeHint  { 200  50 }
+			clipped true
+			sizeToContent true
+			caption "1.5 miles away"
+			oneLine true
+		}
+		
+		CIwUILayoutGrid 
+		{
+			name ""
+			sizeToSpace true
+			
+			column { }
+			column { }
+			column { }
+			
+			row { }
+			row { }
+
+			element 
+			{
+				name "ButtonTemplate_Index"
+				alignH left
+				alignV middle
+				row 0
+				column 0
+				rowSpan 2
+				border { 5 0 }
+			}
+			element 
+			{
+				name "ButtonTemplate_Text"
+				alignH left
+				alignV middle
+				row 0
+				column 1
+				rowSpan 2
+				border { 0 0 }
+			}
+			element 
+			{
+				name "ButtonTemplate_Time"
+				alignH right
+				alignV middle
+				row 1
+				column 2
+				border { 5 0 }
+			}
+			element 
+			{
+				name "ButtonTemplate_Distance"
+				alignH right
+				alignV middle
+				row 0
+				column 2
+				border { 5 0 }
+			}
+		}
+	}
+	CIwUILayoutVertical 
+	{
+		name ""
+		sizeToSpace true
+		element 
+		{
+			name "ButtonBase"
+		}
+	}
+}

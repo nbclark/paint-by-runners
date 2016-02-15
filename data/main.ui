@@ -1,0 +1,264 @@
+CIwUIElement 
+{
+	name "main\Panel"
+	CIwUIElement 
+	{
+		name "Background2"
+		pos  { 0 0 }
+		size  { -1 -1 }
+		updatable true
+	}
+	CIwUIElement 
+	{
+		name "Base"
+		CIwUILayoutVertical 
+		{
+			name ""
+			sizeToSpace true
+			element 
+			{
+				name "Vertical"
+			}
+			element 
+			{
+				name "Vertical_0"
+			}
+		}
+		CIwUIElement 
+		{
+			name "Vertical"
+			sizeMin  { 0 50 }
+			sizeMax  { -1 300 }
+			sizeHint  { -1 300 }
+			
+			CIwUILayoutVertical 
+			{
+				name ""
+				spacing 0
+				sizeToSpace true
+
+				element
+				{
+					name "Label_Connecting"
+					alignH "centre"
+				}
+				element 
+				{
+					name "Image_GameName"
+					alignH "centre"
+				}
+				element 
+				{
+					name "ImageLogo"
+					alignH "centre"
+				}
+				CIwUILayoutSpacer 
+				{
+					name "Spacer2"
+					sizeMin  { 10 1 }
+					sizeMax  { 10 1 }
+					sizeHint  { 10 1 }
+				}
+			}
+			CIwUIImage
+			{
+				name "Label_Connecting"
+				sizeMin  { 15 15 }
+				sizeMax  { -1 25 }
+				sizeHint  { -1 -1 }
+				sizeToSpace true
+				texture "greyedout"
+				colour { 0 0 0 150 }
+				CIwUILabel
+				{
+					name "Text"
+					caption "Connecting GPS"
+					style <label_medium>
+					colour { 0 0 0 105 }
+					textColour { 255 255 255 255 }
+				}
+				CIwUILayout
+				{
+					element
+					{
+						name "Text"
+						alignH "centre"
+						alignV "middle"
+					}
+				}
+			}
+			CIwUIImage 
+			{
+				name "Image_GameName"
+				sizeMin  { 302 73 }
+				sizeMax  { 302 73 }
+				sizeHint  { 302 73 }
+				sizeToContent false
+				texture "picnicgames"
+				shrinkDontCrop false
+			}
+			CIwUIElement 
+			{
+				name "ImageLogo"
+				sizeMin  { 250 179 }
+				sizeMin  { 250 179 }
+				sizeMin  { 250 179 }
+				sizeToContent false
+				
+				CIwUILayoutGrid
+				{
+					column { }
+					row { }
+					sizeToSpace true
+					element 
+					{
+						name "Image_Off"
+						alignH "left"
+						alignV "middle"
+						row 0
+						column 0
+					}
+					element 
+					{
+						name "Image_Connected"
+						alignH "left"
+						alignV "middle"
+						row 0
+						column 0
+					}
+				}
+				CIwUIImage 
+				{
+					name "Image_Off"
+					sizeMin  { 250 179 }
+					sizeMin  { 250 179 }
+					sizeMin  { 250 179 }
+					sizeToContent false
+					texture "logo-off"
+					shrinkDontCrop true
+				}
+				CIwUIImage 
+				{
+					name "Image_Connected"
+					sizeMin  { 250 179 }
+					sizeMin  { 250 179 }
+					sizeMin  { 250 179 }
+					sizeToContent false
+					texture "logo"
+					shrinkDontCrop true
+					colour { 255 255 255 250 }
+				}
+			}
+		}
+		CIwUIElement 
+		{
+			name "Vertical_0"
+			CIwUILayoutVertical 
+			{
+				name ""
+				sizeToSpace true
+				element 
+				{
+					name "Button_StartGame"
+					alignH "centre"
+				}
+				element 
+				{
+					name "Button_LoadMap"
+					alignH "centre"
+				}
+				element 
+				{
+					name "Button_HighScores"
+					alignH "centre"
+				}
+				element 
+				{
+					name "Button_Help"
+					alignH "centre"
+				}
+				CIwUILayoutSpacer 
+				{
+					name "Spacer2"
+					sizeMin  { 15 15 }
+					sizeMax  { 30 30 }
+					sizeHint  { 25 25 }
+				}
+				element 
+				{
+					name "Button_Exit"
+					alignH "centre"
+				}
+			}
+			CIwUIButton 
+			{
+				name "Button_StartGame"
+				style <introbutton>
+				sizeMin  { 20 20 }
+				sizeHint  { 200 40 }
+				sizeMax  { 260 40 }
+				caption "Start New Game"
+				textColour { 0 0 0 255 }
+				OnButtonClick  { "IntroGameState::OnClickStartGame" }
+			}
+			CIwUIButton 
+			{
+				name "Button_LoadMap"
+				style <introbutton>
+				textColour { 0 0 0 255 }
+				sizeMin  { 20 20 }
+				sizeHint  { 200 40 }
+				sizeMax  { 260 40 }
+				caption "Select Game Field"
+				OnButtonClick  { "IntroGameState::OnClickLoadMap" }
+				visible false
+			}
+			CIwUIButton 
+			{
+				name "Button_HighScores"
+				style <introbutton>
+				textColour { 0 0 0 255 }
+				sizeMin  { 20 20 }
+				sizeHint  { 200 40 }
+				sizeMax  { 260 40 }
+				caption "View High Scores"
+				OnButtonClick  { "IntroGameState::OnClickHighScores" }
+			}
+			CIwUIButton 
+			{
+				name "Button_Help"
+				style <introbutton>
+				textColour { 0 0 0 255 }
+				sizeMin  { 20 20 }
+				sizeHint  { 450 40 }
+				sizeMax  { 260 40 }
+				caption "Help"
+				OnButtonClick  { "IntroGameState::OnClickHelp" }
+			}
+			CIwUIButton 
+			{
+				name "Button_Exit"
+				style <introbutton>
+				sizeMin  { 20 20 }
+				sizeHint  { 450 40 }
+				caption "Exit Game"
+				textColour { 0 0 0 255 }
+				OnButtonClick  { "IntroGameState::OnClickExit" }
+				visible false
+			}
+		}
+	}
+	CIwUILayout 
+	{
+		name ""
+		sizeToSpace true
+		element 
+		{
+			name "Background2"
+		}
+		element 
+		{
+			name "Base"
+		}
+	}
+}

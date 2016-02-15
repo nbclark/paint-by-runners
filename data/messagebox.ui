@@ -1,0 +1,330 @@
+CIwUIElement 
+{
+	name "MessageBox"
+	visible false
+	sizeToSpace true
+	sizeHint  { -1 -1 }
+	
+	CIwUILayout
+	{
+		name ""
+		sizeToSpace true
+		element 
+		{
+			name "displaypanel"
+			alignV "bottom"
+		}
+		element 
+		{
+			name "Shadow"
+		}
+	}
+	
+	CIwUIImage
+	{
+		name "Shadow"
+		texture "greyedout"
+		sizeHint  { -1 -1 }
+		colour { 0 0 0 150 }
+		textColour { 255 255 255 255 }
+	}
+	
+	CIwUIElement 
+	{
+		name "displaypanel"
+		style <popupdialog>
+		sizeHint  { -1 450 }
+		
+		CIwUIElement 
+		{
+			name "Panel"
+			CIwUIImage 
+			{
+				name "TitlePanel"
+				texture "background"
+				border  { 2 2 }
+			}
+			CIwUILabel 
+			{
+				name "Title"
+				style <label_medium>
+				caption "Title"
+				//font font_large
+			}
+			CIwUIImage 
+			{
+				name "BodyPanel"
+				texture "background"
+				border  { 8 8 }
+			}
+			CIwUILabel 
+			{
+				name "Description"
+				style <label_medium>
+				caption "Is this field correct?"
+				//font font_large
+			}
+			CIwUIButton 
+			{
+				name "Option1"
+				caption "Yes"
+				OnButtonClick  { "MessageBox::OnOption1" }
+				style <gamebutton>
+				sizeMin  { 0 35 }
+				sizeHint  { -1 80 }
+			}
+			CIwUIButton 
+			{
+				name "Option2"
+				caption "No"
+				OnButtonClick  { "MessageBox::OnOption2" }
+				style <gamebutton>
+				sizeMin  { 0 35 }
+				sizeHint  { -1 80 }
+			}
+			CIwUILayoutGrid 
+			{
+				name ""
+				sizeToSpace true
+				column { }
+				column { }
+				row { }
+				row { }
+				row { }
+				element 
+				{
+					name "TitlePanel"
+					row 0
+					column 0
+					rowSpan 1
+					columnSpan 2
+				}
+				element 
+				{
+					name "Title"
+					border  { 2 2 }
+					alignH "centre"
+					row 0
+					column 0
+					columnSpan 2
+				}
+				element 
+				{
+					name "BodyPanel"
+					row 1
+					column 0
+					rowSpan 2
+					columnSpan 2
+				}
+				element 
+				{
+					name "Description"
+					border  { 10 15 }
+					alignH "centre"
+					row 1
+					column 0
+					columnSpan 2
+				}
+				element 
+				{
+					name "Option1"
+					border  { 5 10 }
+					alignH "left"
+					alignV "middle"
+					row 2
+					column 0
+				}
+				element 
+				{
+					name "Option2"
+					border  { 5 10 }
+					alignH "right"
+					alignV "middle"
+					row 2
+					column 1
+				}
+			}
+		}
+		CIwUILayout 
+		{
+			name ""
+			sizeToSpace true
+			alignV "top"
+			
+			element 
+			{
+				name "Panel"
+				border  { 5 0 }
+				alignH "centre"
+				alignV "top"
+			}
+		}
+	}
+}
+
+CIwUIElement 
+{
+	name "TextEntryBox"
+	visible false
+	sizeToSpace true
+	sizeHint  { -1 -1 }
+	
+	CIwUILayout
+	{
+		name ""
+		sizeToSpace true
+		element 
+		{
+			name "displaypanel"
+			alignV "middle"
+		}
+		element 
+		{
+			name "Shadow"
+			alignV "bottom"
+		}
+	}
+	
+	CIwUIImage
+	{
+		name "Shadow"
+		texture "greyedout"
+		sizeHint  { -1 -1 }
+		colour { 0 0 0 150 }
+		textColour { 255 255 255 255 }
+	}
+	
+
+	CIwUIElement 
+	{
+		name "displaypanel"
+		style <popupdialog>
+		sizeHint  { -1 200 }
+		
+		CIwUIElement 
+		{
+			name "Panel"
+			CIwUIImage 
+			{
+				name "TitlePanel"
+				texture "background"
+				border  { 2 2 }
+			}
+			CIwUILabel 
+			{
+				name "Title"
+				style <label_medium>
+				caption "Title"
+				//font font_large
+			}
+			CIwUIImage 
+			{
+				name "BodyPanel"
+				texture "background"
+				border  { 8 8 }
+			}
+			CIwUILabel 
+			{
+				name "Description"
+				style <label_medium>
+				caption "Is this field correct?"
+				//font font_large
+			}
+			CIwUITextField
+			{
+				name "TextEntryField"
+				style <edit-textField>
+				caption ""
+				sizeMin  { 0 35 }
+				sizeMax  { -1 100 }
+				sizeHint  { -1 100 }
+				//font font_large
+			}
+			CIwUIButton 
+			{
+				name "Option1"
+				caption "Yes"
+				OnButtonClick  { "TextEntryBox::OnOption1" }
+				style <mapbutton>
+				sizeMin  { 0 35 }
+				sizeHint  { -1 80 }
+			}
+			CIwUILayoutGrid 
+			{
+				name ""
+				sizeToSpace true
+				column { }
+				row { }
+				row { }
+				row { }
+				row { }
+				element 
+				{
+					name "TitlePanel"
+					row 0
+					column 0
+					rowSpan 1
+					columnSpan 1
+				}
+				element 
+				{
+					name "Title"
+					border  { 2 2 }
+					alignH "centre"
+					row 0
+					column 0
+					columnSpan 1
+				}
+				element 
+				{
+					name "BodyPanel"
+					row 1
+					column 0
+					rowSpan 3
+					columnSpan 1
+				}
+				element 
+				{
+					name "Description"
+					border  { 10 15 }
+					alignH "centre"
+					row 1
+					column 0
+					columnSpan 1
+				}
+				element 
+				{
+					name "TextEntryField"
+					border  { 10 15 }
+					alignH "centre"
+					row 2
+					column 0
+					columnSpan 1
+				}
+				element 
+				{
+					name "Option1"
+					border  { 5 10 }
+					alignH "left"
+					alignV "middle"
+					row 3
+					column 0
+				}
+			}
+		}
+		CIwUILayout 
+		{
+			name ""
+			sizeToSpace true
+			alignV "bottom"
+			
+			element 
+			{
+				name "Panel"
+				border  { 5 5 }
+				alignH "centre"
+				alignV "bottom"
+			}
+		}
+	}
+}

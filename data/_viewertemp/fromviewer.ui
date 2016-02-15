@@ -1,0 +1,144 @@
+CIwUIElement
+{
+	name "Panel"
+	position { 0 0 }
+	size { 320 480 }
+	visible true
+
+	CIwUIImage
+	{
+		name "Background"
+		position { 0 0 }
+		size { 320 480 }
+		imageColour { 255 255 255 255 }
+		texture "mainbackground"
+	}
+
+	CIwUIElement
+	{
+		name "Base"
+		position { 0 0 }
+		size { 320 480 }
+
+		CIwUIElement
+		{
+			name "Grid"
+			position { 0 0 }
+			size { 0 0 }
+			sizeToContent false
+			colour { 64 0 128 255 }
+
+			CIwUIButton
+			{
+				name "ButtonStart"
+				position { 2 2 }
+				size { 89 37 }
+				style "<button>"
+				OnButtonClick { }
+				caption "Start Game"
+			}
+
+			CIwUIButton
+			{
+				name "ButtonSettings"
+				position { 0 0 }
+				size { 93 41 }
+				style "<button>"
+				caption "Button"
+			}
+
+			CIwUIElement
+			{
+				name "Panel_0"
+				position { 138 428 }
+				size { 0 0 }
+
+				CIwUIImage
+				{
+					name "Background"
+					position { 0 0 }
+					size { 0 0 }
+					texture "background"
+				}
+
+				CIwUIElement
+				{
+					name "Base"
+					position { 0 0 }
+					size { 0 0 }
+				}
+
+				CIwUILayout
+				{
+					sizeToSpace true
+
+					element
+					{
+						name "Background"
+					}
+
+					element
+					{
+						name "Base"
+					}
+				}
+			}
+
+			CIwUILayoutGrid
+			{
+				name ""
+				sizeToSpace true
+				numColumns 1
+				numRows 2
+
+				element
+				{
+					name "ButtonStart"
+					row 1
+					rowSpan 1
+					alignH "centre"
+					alignV "middle"
+					border { 2 2 }
+					column 1
+				}
+
+				element
+				{
+					name "ButtonSettings"
+					row 1
+					alignH "right"
+					alignV "bottom"
+					column 1
+				}
+
+				element
+				{
+					name "Panel_0"
+					row 1
+					alignH "right"
+					alignV "bottom"
+					column 0
+				}
+			}
+		}
+	}
+
+	CIwUILayout
+	{
+		name ""
+		sizeToSpace true
+
+		element
+		{
+			name "Background"
+			style "<mainbackground>"
+		}
+
+		element
+		{
+			name "Base"
+			alignH "centre"
+			alignV "middle"
+		}
+	}
+}

@@ -1,0 +1,330 @@
+
+CIwUIPropertySet 
+{
+	name "<gamebuttonfocus>"
+	drawableType "border"
+	texture "gamebuttonfocus"
+	border  { 10 10 }
+}
+CIwUIPropertySet 
+{
+	name "<gamebutton>"
+	parent <button>
+	sizeMin  { -1 -1 }
+	sizeMax  { -1 -1 }
+	buttonUp <gamebutton_up>
+	buttonDown <gamebutton_down>
+	focus <gamebuttonfocus>
+	margin  { 6 6 }
+	colourDisabled { 255 255 255 125 }
+}
+CIwUIPropertySet 
+{
+	name "<gamebutton_up>"
+	drawableType "border"
+	texture "gamebutton_up"
+	border  { 12 12 }
+}
+CIwUIPropertySet 
+{
+	name "<gamebutton_down>"
+	drawableType "border"
+	texture "gamebutton_down"
+	border  { 12 12 }
+}
+
+CIwUIPropertySet 
+{
+	name "<introbuttonfocus>"
+	drawableType "border"
+	texture "introbuttonfocus"
+	border  { 10 10 }
+}
+CIwUIPropertySet 
+{
+	name "<introbutton>"
+	font "font_medium"
+	parent <button>
+	sizeMin  { -1 -1 }
+	sizeMax  { -1 -1 }
+	buttonUp <introbutton_up>
+	buttonDown <introbutton_down>
+	focus <introbuttonfocus>
+	margin  { 6 6 }
+	colourDisabled { 255 255 255 125 }
+}
+CIwUIPropertySet 
+{
+	name "<introbutton_up>"
+	drawableType "border"
+	texture "introbutton_up"
+	border  { 12 12 }
+}
+CIwUIPropertySet 
+{
+	name "<introbutton_down>"
+	drawableType "border"
+	texture "introbutton_down"
+	border  { 12 12 }
+}
+
+CIwUIPropertySet 
+{
+	name "<mapbuttonfocus>"
+	drawableType "border"
+	texture "mapbuttonfocus"
+	border  { 10 10 }
+}
+CIwUIPropertySet 
+{
+	name "<mapbutton>"
+	parent <button>
+	sizeMin  { -1 -1 }
+	sizeMax  { -1 -1 }
+	buttonUp <mapbutton_up>
+	buttonDown <mapbutton_down>
+	focus <mapbuttonfocus>
+	margin  { 6 6 }
+}
+CIwUIPropertySet 
+{
+	name "<mapbutton_up>"
+	drawableType "border"
+	texture "mapbutton_up"
+	border  { 12 12 }
+}
+CIwUIPropertySet 
+{
+	name "<mapbutton_down>"
+	drawableType "border"
+	texture "mapbutton_down"
+	border  { 12 12 }
+}
+
+
+CIwUIPropertySet 
+{
+	name "<scorebuttonfocus>"
+	drawableType "border"
+	texture "scorebuttonfocus"
+	border  { 10 10 }
+}
+CIwUIPropertySet 
+{
+	name "<scorebutton>"
+	parent <button>
+	sizeMin  { -1 -1 }
+	sizeMax  { -1 -1 }
+	buttonUp <scorebutton_up>
+	buttonDown <scorebutton_down>
+	focus <scorebuttonfocus>
+	margin  { 6 6 }
+}
+CIwUIPropertySet 
+{
+	name "<scorebutton_up>"
+	drawableType "border"
+	texture "scorebutton_up"
+	border  { 12 12 }
+}
+CIwUIPropertySet 
+{
+	name "<scorebutton_down>"
+	drawableType "border"
+	texture "scorebutton_down"
+	border  { 12 12 }
+}
+
+
+CIwUIPropertySet 
+{
+	name "<helpbuttonfocus>"
+	drawableType "border"
+	texture "helpbuttonfocus"
+	border  { 10 10 }
+}
+CIwUIPropertySet 
+{
+	name "<helpbutton>"
+	parent <button>
+	sizeMin  { -1 -1 }
+	sizeMax  { -1 -1 }
+	buttonUp <helpbutton_up>
+	buttonDown <helpbutton_down>
+	focus <helpbuttonfocus>
+	margin  { 6 6 }
+	sizeToContent true
+}
+CIwUIPropertySet 
+{
+	name "<helpbutton_up>"
+	drawableType "border"
+	texture "helpbutton_up"
+	border  { 12 12 }
+}
+CIwUIPropertySet 
+{
+	name "<helpbutton_down>"
+	drawableType "border"
+	texture "helpbutton_down"
+	border  { 12 12 }
+}
+
+CIwUIPropertySet 
+{
+	name "<clearbuttonfocus>"
+	drawableType "border"
+	texture "clearbuttonfocus"
+	border  { 10 10 }
+}
+CIwUIPropertySet 
+{
+	name "<clearbutton>"
+	parent <button>
+	sizeMin  { -1 -1 }
+	sizeMax  { -1 -1 }
+	buttonUp <clearbutton_up>
+	buttonDown <clearbutton_down>
+	focus <clearbuttonfocus>
+	margin  { 1 1 }
+}
+CIwUIPropertySet 
+{
+	name "<clearbutton_up>"
+	drawableType "border"
+	texture "clearbutton_up"
+	border  { 1 1 }
+}
+CIwUIPropertySet 
+{
+	name "<clearbutton_down>"
+	drawableType "border"
+	texture "clearbutton_down"
+	border  { 1 1 }
+}
+
+CIwUIPropertySet 
+{
+	name "<titlebuttonfocus>"
+	drawableType "border"
+	texture "titlebuttonfocus"
+	border  { 5 5 }
+}
+CIwUIPropertySet
+{
+	name "<titlebutton>"
+	parent <button>
+	sizeMin  { -1 16 }
+	sizeMax  { -1 64 }
+	buttonUp <titlebutton_up>
+	buttonDown <titlebutton_down>
+	margin  { 1 1 }
+	focus <titlebuttonfocus>
+	colour { 0 0 0 195 }
+	textColour { 255 255 255 255 }
+}
+CIwUIPropertySet 
+{
+	name "<titlebutton_up>"
+	drawableType "border"
+	texture "titlebutton_up"
+	border  { 1 1 }
+}
+CIwUIPropertySet 
+{
+	name "<titlebutton_down>"
+	drawableType "border"
+	texture "titlebutton_down"
+	border  { 1 1 }
+}
+	
+CIwUIAnimation 
+{ 
+	name "zoominAnim"
+	CIwUIAnimKeyFrame {	time 00		scale	0.50	}
+	CIwUIAnimKeyFrame {	time 25		scale	0.55	}
+	CIwUIAnimKeyFrame {	time 50		scale	0.60	}
+	CIwUIAnimKeyFrame {	time 75		scale	0.65	}
+	CIwUIAnimKeyFrame {	time 100	scale	0.70	}
+	CIwUIAnimKeyFrame {	time 125	scale	0.75	}
+	CIwUIAnimKeyFrame {	time 150	scale	0.80	}
+	CIwUIAnimKeyFrame {	time 175	scale	0.85	}
+	CIwUIAnimKeyFrame {	time 200	scale	0.90	}
+	CIwUIAnimKeyFrame {	time 225	scale	0.95	}
+	CIwUIAnimKeyFrame {	time 250	scale	1.00	}
+} 
+CIwUIAnimation 
+{ 
+	name "zoomoutAnim"
+	CIwUIAnimKeyFrame {	time 00		scale	0.50	}
+	CIwUIAnimKeyFrame {	time 25		scale	0.55	}
+	CIwUIAnimKeyFrame {	time 50		scale	0.60	}
+	CIwUIAnimKeyFrame {	time 75		scale	0.65	}
+	CIwUIAnimKeyFrame {	time 100	scale	0.70	}
+	CIwUIAnimKeyFrame {	time 125	scale	0.75	}
+	CIwUIAnimKeyFrame {	time 150	scale	0.80	}
+	CIwUIAnimKeyFrame {	time 175	scale	0.85	}
+	CIwUIAnimKeyFrame {	time 200	scale	0.90	}
+	CIwUIAnimKeyFrame {	time 225	scale	0.95	}
+	CIwUIAnimKeyFrame {	time 250	scale	1.00	}
+} 
+CIwUIAnimation 
+{ 
+	name "popupAnim"
+	CIwUIAnimKeyFrame {	time 0		scale	0.625	}
+	CIwUIAnimKeyFrame {	time 50		scale	0.825	}
+	CIwUIAnimKeyFrame {	time 100	scale	0.975	}
+	CIwUIAnimKeyFrame {	time 125	scale	1.025	}
+	CIwUIAnimKeyFrame {	time 150	scale	1.050	}
+	CIwUIAnimKeyFrame {	time 175	scale	1.060	}
+	CIwUIAnimKeyFrame {	time 200	scale	1.050	}
+	CIwUIAnimKeyFrame {	time 225	scale	1.035	}
+	CIwUIAnimKeyFrame {	time 250	scale	1.015	}
+	CIwUIAnimKeyFrame {	time 275	scale	1.004	}
+	CIwUIAnimKeyFrame {	time 300	scale	1.000	}
+}
+CIwUIAnimation
+{
+	name "slideDownAnim"
+	
+	CIwUIAnimKeyFrame	{	time 0		offset 	{ 0 0 }		}
+	CIwUIAnimKeyFrame	{	time 25		offset 	{ 0 5 }		}
+	CIwUIAnimKeyFrame	{	time 50		offset 	{ 0 10 }	}
+	CIwUIAnimKeyFrame	{	time 75		offset 	{ 0 40 }	}
+	CIwUIAnimKeyFrame	{	time 100	offset 	{ 0 90 }	}
+	CIwUIAnimKeyFrame	{	time 125	offset 	{ 0 160 }	}
+	CIwUIAnimKeyFrame	{	time 150	offset 	{ 0 250 }	}
+	CIwUIAnimKeyFrame	{	time 175	offset 	{ 0 360 }	}
+	CIwUIAnimKeyFrame	{	time 200	offset 	{ 0 490 }	}
+	CIwUIAnimKeyFrame	{	time 225	offset 	{ 0 2000 }	}
+}
+CIwUIAnimation
+{
+	name "slideInAnim"
+	
+	CIwUIAnimKeyFrame	{	time 450		offset 	{ 0 0 }		}
+	CIwUIAnimKeyFrame	{	time 400		offset 	{ -5 0 }	}
+	CIwUIAnimKeyFrame	{	time 350		offset 	{ -10 0 }	}
+	CIwUIAnimKeyFrame	{	time 300		offset 	{ -40 0 }	}
+	CIwUIAnimKeyFrame	{	time 250		offset 	{ -90 0 }	}
+	CIwUIAnimKeyFrame	{	time 200		offset 	{ -160 0 }	}
+	CIwUIAnimKeyFrame	{	time 150		offset 	{ -250 0 }	}
+	CIwUIAnimKeyFrame	{	time 100		offset 	{ -360 0 }	}
+	CIwUIAnimKeyFrame	{	time 50			offset 	{ -490 0 }	}
+	CIwUIAnimKeyFrame	{	time 0			offset 	{ -2000 0 }	}
+}
+CIwUIAnimation
+{
+	name "slideOutAnim"
+	
+	CIwUIAnimKeyFrame	{	time 450		offset 	{ 0 0 }		}
+	CIwUIAnimKeyFrame	{	time 400		offset 	{ 5 0 }		}
+	CIwUIAnimKeyFrame	{	time 350		offset 	{ 10 0 }	}
+	CIwUIAnimKeyFrame	{	time 300		offset 	{ 40 0 }	}
+	CIwUIAnimKeyFrame	{	time 250		offset 	{ 90 0 }	}
+	CIwUIAnimKeyFrame	{	time 200		offset 	{ 160 0 }	}
+	CIwUIAnimKeyFrame	{	time 150		offset 	{ 250 0 }	}
+	CIwUIAnimKeyFrame	{	time 100		offset 	{ 360 0 }	}
+	CIwUIAnimKeyFrame	{	time 50			offset 	{ 490 0 }	}
+	CIwUIAnimKeyFrame	{	time 0			offset 	{ 2000 0 }	}
+}

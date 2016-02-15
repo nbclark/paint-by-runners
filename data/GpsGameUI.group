@@ -1,0 +1,93 @@
+include resource_templates.itx
+
+CIwResGroup
+{
+	name "GpsGameUI"
+
+	iwui_style/iwui_style.group { inline true }
+
+	"textures/picnicgames.tga"
+	"textures/logo.tga"
+	"textures/logo-off.tga"
+	"textures/connection.tga"
+	"textures/back.tga"
+	"textures/introback.tga"
+	"textures/gamebuttonfocus.tga"
+	"textures/gamebutton_up.tga"
+	"textures/gamebutton_down.tga"
+	"textures/introbuttonfocus.tga"
+	"textures/introbutton_up.tga"
+	"textures/introbutton_down.tga"
+	"textures/mapbuttonfocus.tga"
+	"textures/mapbutton_up.tga"
+	"textures/mapbutton_down.tga"
+	"textures/scorebuttonfocus.tga"
+	"textures/scorebutton_up.tga"
+	"textures/scorebutton_down.tga"
+	"textures/helpbuttonfocus.tga"
+	"textures/helpbutton_up.tga"
+	"textures/helpbutton_down.tga"
+	"textures/clearbuttonfocus.tga"
+	"textures/clearbutton_up.tga"
+	"textures/clearbutton_down.tga"
+	"textures/titlebutton_up.tga"
+	"textures/titlebutton_down.tga"
+	"textures/titlebuttonfocus.tga"
+	"textures/mainbackground.tga"
+	textures/titleBar.tga
+	textures/titleBarTop.tga
+	textures/titleBarMid.tga
+	textures/titleBarBot.tga
+	textures/maplogo.tga
+	textures/greyedout.tga
+	textures/delete_item.tga
+	"textures/0.tga"
+	"textures/1.tga"
+	"textures/2.tga"
+	"textures/3.tga"
+	"textures/4.tga"
+	"textures/5.tga"
+	"textures/6.tga"
+	"textures/7.tga"
+	"textures/8.tga"
+	"textures/9.tga"
+	"textures/colon.tga"
+	"textures/dot.tga"
+	"textures/fullback.tga"
+	"textures/circle.tga"
+	"textures/cursor.tga"
+	"textures/darkbluecircle.tga"
+	"textures/lightbluecircle.tga"
+	"textures/hotter.tga"
+	"textures/colder.tga"
+	"textures/found.tga"
+	"textures/egg.tga"
+	"textures/crackedegg.tga"
+	"textures/spoon.tga"
+	"textures/grass.tga"
+	"textures/ready.tga"
+	"textures/set.tga"
+	"textures/go.tga"
+	"textures/gothedistance.tga"
+	"textures/boomerang.tga"
+	"textures/findthespot.tga"
+	"textures/evasion.tga"
+	"textures/capture.tga"
+	"textures/eggdrop.tga"
+	"textures/shakeit.tga"
+	"textures/user.tga"
+	
+	images/fireflies/userB.png
+
+	"IwUIStyles.itx"
+	"Styles.ui"
+	"Active.ui"
+	"MessageBox.ui"
+	"Main.ui"
+	"SelectGame.ui"
+	"HighScore.ui"
+	"Help.ui"
+	"Pause.ui"
+	"CreateMap.ui"
+	"SelectMap.ui"
+}

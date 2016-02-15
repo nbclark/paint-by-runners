@@ -1,0 +1,205 @@
+//*****************************************************************************
+//* iwui_softkeyboard.ui
+//*
+//* Soft Keyboard Element - Required for Text Input
+//*
+//*****************************************************************************
+CIwUISoftKeyboard
+{
+	name	soft_keyboard
+
+	style	<softkeyboard_style>
+		
+	sizeToContent true
+	updatable true
+	
+	CIwUIFocusHandlerTab
+	{
+		name "Focus1"
+	}
+	
+	cursorDelay			1500
+	cursorFlashPeriod	1200
+	
+	CIwUIImage
+	{ 
+		name "Background"
+		texture background
+	}
+	CIwUIImage
+	{
+		name "BackgroundFade"
+		texture background
+	}
+	 
+	CIwUITextField
+	{
+		name		"text_box"
+		style		<textField_inline>
+	}
+	
+	CIwUISoftKey
+	{
+		name close_button
+		style	<softkeyboard_key>
+		layout	key_layout
+
+		keyType		close
+		keyCharacter "X"
+		
+		size		{ 24, 21 }
+		sizeMin		{ 16, 21 }
+		sizeMax		{ 400, 400 }
+
+		CIwUILabel
+		{
+			name	"Key_Content"
+			style	<softkeyboard_tab_label>
+			caption "X"
+		}
+	}
+	
+	CIwUIElement
+	{
+		name inline_editor
+		updatable true
+		sizeToContent false
+		
+		CIwUILabel
+		{
+			name "input_mode_label"
+			style <label_medium>
+			caption "ABC"
+		}
+		
+		CIwUILayout
+		{
+			sizeToSpace	true
+
+			CIwUILayoutVertical
+			{
+				alignV top
+				alignH centre
+				border { 3 0 }	
+
+				element
+				{
+					name "input_mode_label"
+					border { 8 0 }
+				}
+			}
+		}
+		
+		CIwUISoftKeyPosition
+		{
+			name			softkey_back_position
+			isAdvanceKey	false
+			size			{ 64, 32 }
+					
+			CIwUISoftKey
+			{
+				name		softkey_back
+				style		<softkeyboard_all_in_one>
+				layout		key_layout
+				keyType		close
+				keyCharacter "Cancel"
+				size		{ 64, 32 }
+				
+				CIwUILabel
+				{
+					name		"Key_Content"
+					style		<softkeyboard_number_key_label>
+					caption		"Cancel"
+					font		font_medium	
+				}
+			}
+		}
+		CIwUISoftKeyPosition
+		{
+			name			softkey_ok_position
+			isAdvanceKey	true
+			size			{ 64, 32 }
+			
+			CIwUISoftKey
+			{
+				name		softkey_ok
+				style		<softkeyboard_all_in_one>
+				layout		key_layout
+				keyType		enter
+				pos			{ 0, 0 }
+				size		{ 64, 32 }
+				
+				CIwUILabel
+				{
+					name		"Key_Content"
+					style		<softkeyboard_number_key_label>
+					caption		"OK"
+					font		font_medium	
+				}
+			}
+		}
+	}
+	
+	CIwUILayout
+	{
+		sizeToSpace	true
+		
+		element { name inline_editor }
+		
+		element { name BackgroundFade }
+		element { name Background }
+		
+		CIwUILayoutForm
+		{
+			formSize { 320 480 }
+
+			sizeToSpace	true
+			
+			element
+			{
+				name close_button
+				alignH right
+				left { val 280 }
+				right { val 320 }
+				top { val 0 }
+				bottom { val 40 }
+			}
+			element
+			{
+				name text_box
+				left { val 0 }
+				right { val 320 }
+				top { val 0 }
+				bottom { coord top guide panel_layout }
+			}
+			element
+			{
+				name symbols_chooser
+				left { val 0 }
+				right { val 320 }
+				top { coord bottom guide close_button }
+				bottom { val 480 }
+			}
+			
+			CIwUILayout
+			{
+				name panel_layout
+				
+				left { val 0 }
+				right { val 320 }
+				top { val 233 }
+				bottom { val 480 }
+				alignV bottom
+
+				sizeToSpace	true
+
+				element { name lower_alpha_panel }
+				element { name upper_alpha_panel }
+				element { name numeric_panel }
+				element { name lower_alpha_numpad }
+				element { name upper_alpha_numpad }
+				element { name numeric_numpad }
+			}
+		}
+	}
+}

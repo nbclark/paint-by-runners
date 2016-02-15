@@ -1,0 +1,835 @@
+//*****************************************************************************
+//* iwui_propertysets.itx
+//*
+//* Styles for the Ideaworks User Interface Look & Feel
+//*
+//*****************************************************************************
+// Font Styles
+
+CIwUIPropertySet
+{
+	name		<font_h1>
+//: extraclass CIwUILabel
+//: extraclass CIwUIDrawableText
+	textColour	{ 0 0 0 255 }
+	font		font_huge
+	margin		{ 0 0 }
+	alignH		centre
+	alignV		middle
+	sizeToContent	false
+}
+
+CIwUIPropertySet
+{
+	name		<font_title>
+//: extraclass CIwUILabel
+//: extraclass CIwUIDrawableText
+	textColour	{ 45 45 45 255 }
+	font		font_large
+	margin		{ 0 0 }
+	alignH		centre
+	alignV		middle
+	sizeToContent	false
+}
+
+CIwUIPropertySet
+{
+	name		<font_heading>
+//: extraclass CIwUILabel
+//: extraclass CIwUIDrawableText
+	textColour	{ 45 45 45 255 }
+	font		font_small
+	margin		{ 0 0 }
+	alignH		centre
+	alignV		middle
+	sizeToContent	false
+}
+
+CIwUIPropertySet
+{
+	name		<font_body>
+//: extraclass CIwUILabel
+//: extraclass CIwUIDrawableText
+	textColour	{ 45 45 45 255 }
+	font		font_tiny
+	margin		{ 0 0 }
+	alignH		centre
+	alignV		middle
+	sizeToContent	false
+}
+
+//*****************************************************************************
+// Focus Drawables
+CIwUIPropertySet
+{
+	name		<focus>
+//: extraclass IIwUIDrawable 
+	drawableType border
+	texture		focus
+	border		{ 10, 10 }
+}
+CIwUIPropertySet
+{
+	name		<focus_left>
+//: extraclass IIwUIDrawable 
+	parent <focus>
+	uv0 {0,0}
+	uv1 {30,32}
+}
+CIwUIPropertySet
+{
+	name		<focus_right>
+//: extraclass IIwUIDrawable 
+	parent <focus>
+	uv0 {2,0}
+	uv1 {32,32}
+}
+CIwUIPropertySet
+{
+	name		<focus_centre>
+//: extraclass IIwUIDrawable 
+	parent <focus>
+	uv0 {2,0}
+	uv1 {30,32}
+}
+CIwUIPropertySet
+{
+	name		<focus_larger_left>
+//: extraclass IIwUIDrawable 
+	parent <focus>
+	uv0 {0,0}
+	uv1 {30,30}
+}
+CIwUIPropertySet
+{
+	name		<focus_larger_right>
+//: extraclass IIwUIDrawable 
+	parent <focus>
+	uv0 {2,0}
+	uv1 {32,30}
+}
+CIwUIPropertySet
+{
+	name		<focus_textField>
+//: extraclass IIwUIDrawable 
+	parent <focus>
+	uv0 {1,2}
+	uv1 {31,30}
+}
+CIwUIPropertySet
+{
+	name		<focus_slider>
+//: extraclass IIwUIDrawable 
+	parent <focus>
+	uv0 {0,0}
+	uv1 {30,30}
+}
+CIwUIPropertySet
+{
+	name		<focus_tab>
+//: extraclass IIwUIDrawable 
+	parent <focus>
+	uv0 {0,0}
+	uv1 {32,29}
+}
+CIwUIPropertySet
+{
+	name		<focus_checkbox>
+//: extraclass IIwUIDrawable 
+	parent <focus>
+	uv0 {0,0}
+	uv1 {32,32}
+}
+//*****************************************************************************
+// Button Drawables
+CIwUIPropertySet
+{
+	name		<button_up>
+//: extraclass IIwUIDrawable 
+	drawableType border
+	border		{ 12, 12 }
+	texture	button_up
+}
+CIwUIPropertySet
+{
+	name		<button_down>
+//: extraclass IIwUIDrawable 
+	drawableType border
+	border		{ 12, 12 }
+	texture	button_down
+}
+//-----------------------------------------------------------------------------
+// Button Element
+CIwUIPropertySet
+{
+	name		<button>
+//: extraclass CIwUIButton
+	parent		<font_heading>
+	buttonUp	<button_up>
+	buttonDown	<button_down>
+	sizeMin		{ 89 37 }
+	sizeMax		{ 89 37 }
+	margin		{ 6 6 }
+	focus <focus>
+}
+//*****************************************************************************
+// Slider Drawables
+CIwUIPropertySet
+{
+	name		<slider_marker>
+//: extraclass IIwUIDrawable 
+	drawableType image
+	texture		slider_marker
+}
+CIwUIPropertySet
+{
+	name		<slider_bar>
+//: extraclass IIwUIDrawable
+	drawableType border
+	texture		slider_bar
+	border		{ 3, 0 }
+}
+CIwUIPropertySet
+{
+	name		<slider_background>
+//: extraclass IIwUIDrawable
+	drawableType border
+	texture		slider_background
+	border		{ 3, 0 }
+}
+//-----------------------------------------------------------------------------
+// Slider Element
+CIwUIPropertySet
+{
+	name		<slider>
+//: extraclass CIwUISlider
+	background		<slider_background>
+	bar				<slider_bar>
+	marker			<slider_marker>
+	markerSize		{ 25 32 }
+	sliderMin		0
+	sliderMax		1024
+	focus			<focus_slider>
+	sizeToContent		true
+}
+//*****************************************************************************
+// Progress Bar Drawables
+CIwUIPropertySet
+{
+	name		<progressBar_base> 
+//: extraclass IIwUIDrawable
+	border { 12, 12 }
+	uv0 { 3, 3 }
+	uv1 { 29, 24 }
+	drawableType border
+}
+CIwUIPropertySet
+{
+	name		<progressBar_background>
+//: extraclass IIwUIDrawable
+	texture progressBar_background
+	parent <progressBar_base>
+}
+//-----------------------------------------------------------------------------
+// Progress Bar Element
+CIwUIPropertySet
+{
+	name		<progressBar>
+//: extraclass CIwUIProgressBar
+	parent			<progressBar_base>
+	sizeToContent		true
+	texture			progressBar_style
+	background		<progressBar_background>
+}
+//*****************************************************************************
+// Radio Button & Tab Bar Styles
+CIwUIPropertySet
+{
+	name		<radio_base>
+//: extraclass IIwUIDrawable
+	border { 7, 9 }
+	drawableType border
+}
+CIwUIPropertySet
+{
+	name		<radio_buttonDown>
+//: extraclass IIwUIDrawable
+	texture radio_buttonDown
+	parent <radio_base>
+}
+CIwUIPropertySet
+{
+	name		<radio_left_buttonDown>
+//: extraclass IIwUIDrawable
+	texture radio_left_buttonDown
+	parent <radio_base>
+}
+CIwUIPropertySet
+{
+	name		<radio_right_buttonDown>
+//: extraclass IIwUIDrawable
+	texture radio_right_buttonDown
+	parent <radio_base>
+}
+CIwUIPropertySet
+{
+	name		<radio_buttonUp>
+//: extraclass IIwUIDrawable
+	texture radio_buttonUp
+	parent <radio_base>
+}
+CIwUIPropertySet
+{
+	name		<radio_left_buttonUp>
+	texture radio_left_buttonUp
+	parent <radio_base>
+}
+CIwUIPropertySet
+{
+	name		<radio_right_buttonUp>
+//: extraclass IIwUIDrawable
+	texture radio_right_buttonUp
+	parent <radio_base>
+}
+CIwUIPropertySet
+{
+	name		<radio_base_larger>
+//: extraclass IIwUIDrawable
+	border { 8, 9 } drawableType border
+}
+CIwUIPropertySet
+{
+	name		<radio_larger_left_buttonUp>
+//: extraclass IIwUIDrawable
+	texture radio_larger_left_buttonUp
+	parent <radio_base_larger>
+}
+CIwUIPropertySet
+{
+	name		<radio_larger_right_buttonUp>
+//: extraclass IIwUIDrawable
+	texture radio_larger_right_buttonUp
+	parent <radio_base_larger>
+}
+CIwUIPropertySet
+{
+	name		<radio_larger_left_buttonDown>
+//: extraclass IIwUIDrawable
+	texture radio_larger_left_buttonDown
+	parent <radio_base_larger>
+}
+CIwUIPropertySet
+{
+	name		<radio_larger_right_buttonDown>
+//: extraclass IIwUIDrawable
+	texture radio_larger_right_buttonDown
+	parent <radio_base_larger>
+}
+//-----------------------------------------------------------------------------
+// Radio Button & Tab Bar Elements
+CIwUIPropertySet
+{
+	name		<radio>
+//: extraclass CIwUIRadioButton
+	parent		<font_heading>	
+	sizeMin		{ 16 32 }
+	sizeMax		{ 64 32 }
+	focus	<focus>
+}
+CIwUIPropertySet
+{
+	name		<radio_larger>
+//: extraclass CIwUIRadioButton
+	parent		<font_title>
+	sizeMin		{ 24 35 }
+	sizeMax		{ 84 35 }
+	focus	<focus>
+}
+CIwUIPropertySet
+{
+	name		<radio_left>
+//: extraclass CIwUIRadioButton
+	buttonUp	<radio_left_buttonUp>
+	buttonDown	<radio_left_buttonDown>
+	parent <radio>
+	focus	<focus_left>
+}
+CIwUIPropertySet
+{
+	name		<radio_centre>
+//: extraclass CIwUIRadioButton
+	buttonUp	<radio_buttonUp>
+	buttonDown	<radio_buttonDown>
+	parent <radio>
+	focus	<focus_centre>
+}
+CIwUIPropertySet
+{
+	name		<radio_right>
+//: extraclass CIwUIRadioButton
+	buttonUp	<radio_right_buttonUp>
+	buttonDown	<radio_right_buttonDown>
+	parent <radio>
+	focus	<focus_right>
+}
+CIwUIPropertySet
+{
+	name		<radio_larger_left>
+//: extraclass CIwUIRadioButton
+	buttonUp	<radio_larger_left_buttonUp>
+	buttonDown	<radio_larger_left_buttonDown>
+	parent <radio_larger>
+	focus	<focus_larger_left>
+}
+CIwUIPropertySet
+{
+	name		<radio_larger_right>
+//: extraclass CIwUIRadioButton
+	buttonUp	<radio_larger_right_buttonUp>
+	buttonDown	<radio_larger_right_buttonDown>
+	parent <radio_larger>
+	focus	<focus_larger_right>
+}
+//*****************************************************************************
+// Label Elements
+CIwUIPropertySet
+{
+	name		<label_huge>
+	parent		<font_h1>
+//: extraclass CIwUILabel
+//	sizeMin		{  0 37 }
+	sizeMax		{ -1 37 }
+//	margin		{ 6 6 }
+	alignH		left
+	alignV		middle
+	sizeToContent	true
+}
+CIwUIPropertySet
+{
+	name		<label_large>
+	parent		<font_title>
+//: extraclass CIwUILabel
+//	sizeMin		{  0 37 }
+	sizeMax		{ -1 37 }
+//	margin		{ 6 6 }
+	alignH		left
+	alignV		middle
+	sizeToContent	true
+}
+CIwUIPropertySet
+{
+	name		<label_medium>
+	parent		<font_heading>
+//: extraclass CIwUILabel
+//	sizeMin		{  0 37 }
+	sizeMax		{ -1 37 }
+//	margin		{ 6 6 }
+	alignH		left
+	alignV		middle
+	sizeToContent	true
+}
+CIwUIPropertySet
+{
+	name		<label_small>
+	parent		<font_body>
+//: extraclass CIwUILabel
+//	sizeMin		{  0 20 }
+	sizeMax		{ -1 20 }
+	alignH		left
+	alignV		middle
+	sizeToContent	true
+}
+//*****************************************************************************
+// Checkbox Drawables
+CIwUIPropertySet
+{
+	name		<checkbox_style>
+//: extraclass IIwUIDrawable 
+	drawableType image
+	texture		checkbox_style
+}
+CIwUIPropertySet
+{
+	name		<checkbox_cross>
+//: extraclass IIwUIDrawable
+	drawableType image
+	texture		checkbox_cross
+}
+//-----------------------------------------------------------------------------
+// Checkbox Elements
+CIwUIPropertySet
+{
+	name		<checkbox>
+//: extraclass CIwUICheckbox
+	parent			<font_heading>
+	margin			{ 8 0 }
+	alignH			left
+	alignV			middle
+	caption			""
+	boxSize			{ 24 24 }
+	boxStyle		<checkbox_style>
+	crossStyle		<checkbox_cross>
+	focus			<focus_checkbox>
+	sizeToContent		true
+}
+//*****************************************************************************
+// TextField Drawables
+CIwUIPropertySet
+{
+	name		<textField_cursor>
+//: extraclass IIwUIDrawable
+	drawableType	image
+	texture			textField_cursor
+}
+CIwUIPropertySet
+{
+	name		<textField_background>
+//: extraclass IIwUIDrawable
+	drawableType border
+	border		{ 12, 12 }
+	texture	textField_background
+}
+//-----------------------------------------------------------------------------
+// TextField Elements
+CIwUIPropertySet
+{
+	name		<textField_inline>
+//: extraclass CIwUITextField
+	sizeHint { -1 55 }
+	textColour		{ 45 45 45 255 }
+	font			font_medium
+	margin			{ 8 8 }
+	alignH			left
+	alignV			middle
+	oneLine			true
+	caption			""
+	background		<textField_background>
+	sizeToContent		false
+	cursor			<textField_cursor>
+	cursorSize		{ 3 17 }
+	focus			<focus_textField>
+}
+CIwUIPropertySet
+{
+	name		<textField>
+//: extraclass CIwUITextField
+	parent			<label_medium>
+	oneLine			true
+	sizeToContent		false
+	cursor			<textField_cursor>
+	cursorSize		{ 3 17 }
+	margin			{ 8 8 }
+	background		<textField_background>
+	focus			<focus_textField>
+}
+//*****************************************************************************
+// SoftKeyboard Drawables
+CIwUIPropertySet
+{
+	name		<img_keyboard_background>
+	texture		keyboard_bluebackground
+	drawableType	border
+	border			{ 10, 10 }
+	sizeMin { 0, 0 }
+	sizeHint { -1, -1 }
+}
+CIwUIPropertySet
+{
+	name		<img_keyboardTab_frame>
+//: extraclass IIwUIDrawable
+	border			{ 10, 8 }
+	drawableType	border
+	texture			keyboardTab_frame
+	sizeMin			{ 0, 8 }
+	sizeMax			{ -1, 16 }
+}
+CIwUIPropertySet
+{
+	name		<keyboardTabStyle>
+//: extraclass IIwUIDrawable
+	drawableType border
+	border		{ 7, 7 }
+}
+CIwUIPropertySet
+{
+	name		<keyboardTab_unselected>
+//: extraclass IIwUIDrawable
+	parent		<keyboardTabStyle>
+	texture	keyboardTab_unselected
+}
+CIwUIPropertySet
+{
+	name		<keyboardTab_selected>
+//: extraclass IIwUIDrawable
+	parent		<keyboardTabStyle>
+	texture	keyboardTab_selected
+}
+CIwUIPropertySet
+{
+	name		<border_softkeyboard_close>
+//: extraclass IIwUIDrawable
+	drawableType border
+	border		{ 12, 12 }
+	texture		button_up
+}
+CIwUIPropertySet
+{
+	name		<bubble>
+//: extraclass IIwUIDrawable
+	drawableType	border
+	border			{ 8, 8 }
+	texture			bubble
+}
+CIwUIPropertySet
+{
+	name		<bubble_pointer>
+//: extraclass IIwUIDrawable
+	drawableType	image
+	texture			bubble_pointer
+}
+CIwUIPropertySet
+{
+	name		<border_softkeyboard_key>
+//: extraclass IIwUIDrawable
+	drawableType border
+	border		{ 7, 12 }
+	texture		keyboard_key_middle
+}
+CIwUIPropertySet
+{
+	name		<border_softkeyboard_pressed_key>
+//: extraclass IIwUIDrawable
+	drawableType border
+	border		{ 7, 12 }
+	texture		keyboard_key_middle_pressed
+}
+CIwUIPropertySet
+{
+	name		<border_softkeyboard_key_left>
+//: extraclass IIwUIDrawable
+	parent		<border_softkeyboard_key>
+	texture		keyboard_key_left
+}
+CIwUIPropertySet
+{
+	name		<border_softkeyboard_key_right>
+//: extraclass IIwUIDrawable
+	parent		<border_softkeyboard_key>
+	texture		keyboard_key_right
+}
+CIwUIPropertySet
+{
+	name		<border_softkeyboard_pressed_key_left>
+//: extraclass IIwUIDrawable
+	parent		<border_softkeyboard_pressed_key>
+	texture		keyboard_key_left_pressed
+}
+CIwUIPropertySet
+{
+	name		<border_softkeyboard_pressed_key_right>
+//: extraclass IIwUIDrawable
+	parent		<border_softkeyboard_pressed_key>
+	texture		keyboard_key_right_pressed
+}
+CIwUIPropertySet
+{
+	name		<border_key_all_in_one>
+//: extraclass IIwUIDrawable
+	parent		<border_softkeyboard_key>
+	texture		keyboard_key_all_in_one
+}
+CIwUIPropertySet
+{
+	name		<border_key_all_in_one_pressed>
+//: extraclass IIwUIDrawable
+	parent		<border_softkeyboard_pressed_key>
+	texture		keyboard_key_all_in_one_pressed
+}
+//-----------------------------------------------------------------------------
+// SoftKeyboard Elements
+CIwUIPropertySet
+{
+	name		<softkeyboard_key>
+//: extraclass CIwUIButton
+	sizeMin			{ 16, 25 }
+	sizeMax			{ 500, 500 }
+	buttonUp		<border_softkeyboard_key>
+	buttonDown		<border_softkeyboard_pressed_key>
+	layout			key_layout
+	focus			<focus>
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_key_left>
+//: extraclass CIwUIButton
+	parent			<softkeyboard_key>
+	buttonUp		<border_softkeyboard_key_left>
+	buttonDown		<border_softkeyboard_pressed_key_left>
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_key_right>
+//: extraclass CIwUIButton
+	parent			<softkeyboard_key>
+	buttonUp		<border_softkeyboard_key_right>
+	buttonDown		<border_softkeyboard_pressed_key_right>
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_all_in_one>
+//: extraclass CIwUIButton
+	parent			<softkeyboard_key>
+	buttonUp		<border_key_all_in_one>
+	buttonDown		<border_key_all_in_one_pressed>
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_key_layout>
+//: extraclass CIwUILayout
+	border			{ 0 0 }
+	alignH			centre
+	alignV			middle
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_numpad_num>
+//: extraclass CIwUILabel
+	textColour		{ 45 45 45 255 }
+	font			font_medium
+	alignH			centre
+	alignV			middle
+	sizeToContent		false
+	border			{ 0 0 }
+	sizeHint		{ 400 0 }
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_numpad_txt>
+//: extraclass CIwUILabel
+	textColour		{ 45 45 45 255 }
+	font			font_small
+	alignH			centre
+	alignV			middle
+	sizeToContent		false
+	border			{ 0 0 }
+	sizeHint		{ 800 0 }
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_lower_key_label>
+//: extraclass CIwUILabel
+	textColour		{ 45 45 45 255 }
+	font			font_medium
+	alignH			centre
+	alignV			middle
+	sizeToContent		true
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_tab_label>
+//: extraclass CIwUILabel
+	textColour		{ 45 45 45 255 }
+	font			font_medium
+	alignH			centre
+	alignV			middle
+	sizeToContent		true
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_lower_key_image>
+//: extraclass CIwUIElement
+	sizeToContent	true
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_upper_key_label>
+//: extraclass CIwUILabel
+	parent			<softkeyboard_lower_key_label>
+	font			font_medium
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_number_key_label>
+//: extraclass CIwUILabel
+	parent			<softkeyboard_lower_key_label>
+	font			font_medium
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_extra>
+//: extraclass CIwUILabel
+	parent			<softkeyboard_all_in_one>
+	sizeMin			{ 39 25 }
+	sizeMax			{ 790 500 }
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_space>
+//: extraclass CIwUILabel
+	parent			<softkeyboard_all_in_one>
+	sizeMin			{ 90 25 }
+	sizeMax			{ 2820 500 }
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_style>
+//: extraclass CIwUIElement
+}
+CIwUIPropertySet
+{
+	name		<balloon_style>
+//: CIwUISoftKeyBalloon
+	displayLength	300		
+	background		<bubble>
+	backgroundPointer <bubble_pointer>
+	textColour		{ 45 45 45 255 }
+	font			font_medium
+	alignH			centre
+	alignV			middle
+	sizeToContent		false
+	balloonSize		{ 70 70 }
+}
+CIwUIPropertySet
+{
+	name		<tab_key_up>
+//: extraclass CIwUIButton
+	sizeMin			{ 16, 21 }
+	sizeMax			{ 640, 21 }
+	buttonUp		<keyboardTab_selected>
+	buttonDown		<keyboardTab_unselected>
+	layout			key_layout
+	focus			<focus_tab>
+}
+CIwUIPropertySet
+{
+	name		<tab_key_down>
+//: extraclass CIwUIButton
+	sizeMin			{ 16, 21 }
+	sizeMax			{ 640, 21 }
+	buttonUp		<keyboardTab_unselected>
+	buttonDown		<keyboardTab_selected>
+	layout			key_layout
+	focus			<focus_tab>
+}
+CIwUIPropertySet
+{
+	name		<softkeyboard_keys_style>
+//: CIwUIElement
+	wrapLeft	wrap
+	wrapRight	wrap
+	wrapUp		none
+	wrapDown	stop
+}
+//*****************************************************************************
+CIwUIPropertySet
+{
+//: CIwUIElement
+	name <spinner-spacer>
+	texture spinnerspacer
+	sizeMax { 8 -1 }
+}
+CIwUIPropertySet
+{
+	name <background>
+	texture Background
+}

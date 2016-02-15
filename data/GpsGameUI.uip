@@ -1,0 +1,13 @@
+// IwUI Project file
+
+dir ""
+group "GpsGameUI.group"
+palette "iwui_style\expmetapalette.ui"
+material "iwui_style\textures\iwui_style.mtl"
+propset "iwui_style\iwui_stylesheet.itx"
+stylesheet "iwui"
+hwswmode 2
+size 320 480
+outlinehierarchy false
+outlinesiblings false
+outlinemargins false

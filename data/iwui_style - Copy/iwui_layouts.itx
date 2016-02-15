@@ -1,0 +1,12 @@
+CIwUILayout
+{
+	name		key_layout
+	sizeToSpace	true
+
+	element	
+	{
+		name	"Key_Content"
+		alignH	centre
+		alignV	middle
+	}
+}

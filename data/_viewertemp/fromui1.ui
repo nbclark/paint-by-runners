@@ -1,0 +1,138 @@
+CIwUIElement
+{
+	name "main\Panel"
+	CIwUIElement 
+	{
+		name "Background"
+		pos  { 0 0 }
+		size  { -1 -1 }
+		updatable true
+	}
+	CIwUIElement 
+	{
+		name "Base"
+		CIwUILayoutVertical 
+		{
+			name ""
+			sizeToSpace true
+			element 
+			{
+				name "Vertical"
+			}
+			element 
+			{
+				name "Vertical_0"
+			}
+		}
+		CIwUIElement 
+		{
+			name "Vertical"
+			sizeMin  { 0 50 }
+			sizeMax  { -1 300 }
+			sizeHint  { -1 300 }
+			CIwUILayoutVertical 
+			{
+				name ""
+				sizeToSpace true
+				spacing 0
+				CIwUILayoutSpacer 
+				{
+					name "Spacer"
+					sizeMin  { 15 15 }
+					sizeMax  { 30 30 }
+					sizeHint  { 30 30 }
+				}
+				element 
+				{
+					name "Image"
+					alignH "centre"
+				}
+				CIwUILayoutSpacer 
+				{
+					name "Spacer2"
+					sizeMin  { 15 15 }
+					sizeMax  { 30 30 }
+					sizeHint  { 30 30 }
+				}
+			}
+			CIwUIImage 
+			{
+				name "Image"
+				sizeMin  { 25 25 }
+				sizeMax  { 250 250 }
+				sizeHint  { 250 250 }
+				aspectRatio  { 1 1 }
+				sizeToContent false
+				texture "logo"
+				shrinkDontCrop true
+			}
+		}
+		CIwUIElement 
+		{
+			name "Vertical_0"
+			CIwUILayoutVertical 
+			{
+				name ""
+				sizeToSpace true
+				element 
+				{
+					name "Button_StartGame"
+					alignH "centre"
+				}
+				element 
+				{
+					name "Button_LoadMap"
+					alignH "centre"
+				}
+				element 
+				{
+					name "Button_Exit"
+					alignH "centre"
+				}
+			}
+			CIwUIButton 
+			{
+				name "Button_StartGame"
+				sizeMin  { 20 20 }
+				sizeMax  { 450 -1 }
+				sizeHint  { 450 80 }
+				caption "Start New Game"
+				textColour { 0 0 0 255 }
+				OnButtonClick  { "IntroGameState::OnClickStartGame" }
+			}
+			CIwUIButton 
+			{
+				name "Button_LoadMap"
+				sizeMin  { 20 20 }
+				sizeMax  { 450 -1 }
+				sizeHint  { 450 80 }
+				caption "Select Game Map"
+				textColour { 0 0 0 255 }
+				OnButtonClick  { "IntroGameState::OnClickLoadMap" }
+			}
+			CIwUIButton 
+			{
+				name "Button_Exit"
+				sizeMin  { 20 20 }
+				sizeMax  { 450 -1 }
+				sizeHint  { 450 80 }
+				caption "Exit Game"
+				textColour { 0 0 0 255 }
+				OnButtonClick  { "IntroGameState::OnClickExit" }
+			}
+		}
+	}
+	CIwUILayout 
+	{
+		name ""
+		sizeToSpace true
+		element 
+		{
+			name "Background"
+		}
+		element 
+		{
+			name "Base"
+		}
+	}
+}

@@ -1,0 +1,12 @@
+CIwResGroup
+{
+	name	iwui_fonts
+
+	./font_tiny.gxfont
+	./font_small.gxfont
+	./font_medium.gxfont
+	./font_large.gxfont
+	./font_huge.gxfont
+	./arial14.gxfont
+	./arial24.gxfont
+}

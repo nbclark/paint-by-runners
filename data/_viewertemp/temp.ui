@@ -1,0 +1,41 @@
+CIwUIScrollableView
+{
+	name "selectMap\panel"
+	position { 0 0 }
+	size { 320 480 }
+	visible true
+	updatable true
+	sizeMax { -1 -1 }
+	clipped true
+
+	CIwUIFocusHandlerTab
+	{
+		name "Focus"
+	}
+
+	CIwUIButton
+	{
+		name "Button1"
+		position { 0 0 }
+		size { 320 37 }
+		style "<button>"
+		aspectRatio { 0 0 }
+		sizeHint { -1 -1 }
+		oneLine true
+		sizeMax { -1 -1 }
+		sizeMin { -1 -1 }
+		caption "Map #1234 - Soccer Field"
+		colour { 255 255 255 255 }
+	}
+
+	CIwUIButton
+	{
+		name "Button2"
+		position { 0 472 }
+		size { 320 37 }
+		style "<button>"
+		sizeMax { -1 -1 }
+		sizeMin { 89 37 }
+		caption "Button"
+	}
+}

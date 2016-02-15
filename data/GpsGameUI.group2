@@ -1,0 +1,33 @@
+include resource_templates.itx
+
+CIwResGroup
+{
+	name "GpsGameUI"
+
+	iwui_style/iwui_style.group { inline true }
+
+	"textures/0.tga"
+	textures/1.tga
+	textures/2.tga
+	textures/3.tga
+	textures/4.tga
+	textures/5.tga
+	textures/6.tga
+	textures/7.tga
+	textures/8.tga
+	textures/9.tga
+	textures/colon.tga
+	textures/dot.tga
+
+	"IwUIStyles.itx"
+	"Styles.ui"
+	"SelectMap.ui"
+	"CreateMap.ui"
+	"Active.ui"
+	"MessageBox.ui"
+	"Main.ui"
+	"SelectGame.ui"
+	"HighScore.ui"
+	"Help.ui"
+	"Pause.ui"
+}

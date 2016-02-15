@@ -1,0 +1,24 @@
+[S3E]
+MemSize=5485760
+MemSizeDebug = 6485760
+
+# These lines specify a splash screen to display while the s3e file is loaded
+SplashscreenBkR=255
+SplashscreenBkG=255
+SplashscreenBkB=255
+Splashscreen=splash.jpg
+SplashscreenWidth=320
+SplashscreenHeight=480
+FixScreenOrientation=1
+[ResManager]
+ResBuild=1
+
+[GX]
+ScreenOrientAutoHandled=0
+DataCacheSize=1750000
+PolyBufferSize=200000
+VertCacheSize=50000
+NumTPages = 140
+
+[Util]
+MaxAllocationWarning=0

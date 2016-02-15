@@ -1,0 +1,8 @@
+CIwResGroup
+{
+	name	iwui_resources
+
+	.\textures\iwui_textures.group
+	.\fonts\iwui_fonts.group
+	.\iwui_layouts.itx
+}

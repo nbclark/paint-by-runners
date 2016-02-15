@@ -1,0 +1,154 @@
+CIwUIElement 
+{
+	name "createMap\\panel"
+	sizetoSpace true
+	
+		CIwUIButton
+		{
+			name "top"
+			style	<titlebutton>
+			colour { 0 0 0 195 }
+			textColour { 255 255 255 255 }
+			OnButtonClick  { "CreateMapGameState::OnClickBack" }
+					
+			CIwUIElement 
+			{
+				name "Base_1"
+				CIwUILabel
+				{
+					name "ButtonQuit"
+					style	<mapbutton>
+					colour { 0 0 0 105 }
+					textColour { 255 255 255 255 }
+					caption ""
+					font	font_large
+					sizeMin  { 0 35 }
+					sizeMax  { -1 -1 }
+					sizeHint  { 64 64 }
+
+					CIwUIImage
+					{
+						name "img"
+						sizeToContent false
+						texture "back"
+						sizeMin  { 32 32 }
+						sizeMax	{ 64 64 }
+						sizeHint  { 64 64 }
+						aspectRatio { 1 1 }
+					}
+					CIwUILayout 
+					{
+						name ""
+						element 
+						{
+							name "img"
+							alignH "centre"
+							alignV "middle"
+						}
+					}
+				}
+				CIwUILabel
+				{
+					name "TitleLabel"
+					style <label_medium>
+					colour { 0 0 0 105 }
+					textColour { 255 255 255 255 }
+					sizeMin  { 0 35 }
+					sizeMax  { -1 -1 }
+					sizeHint  { 600 64 }
+					clipped true
+					sizeToContent false
+					caption "Create New Field"
+					oneLine true
+					margin  { 8 0 }
+					//font	font_large
+					OnButtonClick  { "CreateMapGameState::OnClickBack" }
+				}
+				CIwUILayoutGrid 
+				{
+					name ""
+					column { }
+					column { }
+					row { }
+					sizeToSpace true
+					element 
+					{
+						name "TitleLabel"
+						alignH "left"
+						alignV "middle"
+						row 0
+						column 0
+					}
+					element 
+					{
+						name "ButtonQuit"
+						alignH "right"
+						alignV "middle"
+						row 0
+						column 1
+					}
+				}
+			}
+			CIwUILayout 
+			{
+				name ""
+				sizeToSpace true
+				element 
+				{
+					name "TopPanel"
+				}
+				element 
+				{
+					name "Base_1"
+					border  { 0 0 }
+					alignV "middle"
+				}
+			}
+		}
+	CIwUIElement
+	{
+		name "bottom"
+		CIwUIButton
+		{
+			name "Base"
+			sizeMin  { 0 40 }
+			sizeMax  { -1 70 }
+			sizeHint  { -1 70 }
+			margin  { 10 10 }
+			caption "Use your finger to trace a single line around the boundaries of your play field."
+			//font font_large
+			colour { 0 0 0 105 }
+			textColour { 255 255 255 255 }
+			style	<mapbutton>
+		}
+		CIwUILayout
+		{
+			name ""
+			element 
+			{
+				name "Base"
+				alignV "bottom"
+				row 0
+				column 1
+			}
+		}
+	}
+	CIwUILayout
+	{
+		name ""
+		element 
+		{
+			name "top"
+			alignV "top"
+			row 0
+			column 0
+		}
+		element 
+		{
+			name "bottom"
+			alignV "bottom"
+			row 0
+			column 1
+		}
+	}
+}
